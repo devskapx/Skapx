@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stats-wrapper {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  /* Center entire section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-container {
+  max-width: 70% !important;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  padding: 40px 20px;
+}
+
+.stat-item {
+  position: relative;
+}
+
+.stat-number {
+  font-size: 120px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: #4a3a8c;
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -4px;
+  overflow: hidden;
+  height: 120px;
+  position: relative;
+}
+
+.number-column {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.number-item {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #FF6700;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+}
+
+/* ✅ Description limited to 2 lines */
+.stat-description {
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 15px;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 70%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding: 30px 20px;
+  }
+
+  .stat-number {
+    font-size: 100px;
+    height: 100px;
+  }
+
+  .number-item {
+    height: 100px;
+  }
+
+  .stat-title {
+    font-size: 19px;
+  }
+
+  .stat-description {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 30px 15px;
+    max-width: 100% !important;
+  }
+
+  .stat-number {
+    font-size: 80px;
+    height: 80px;
+    letter-spacing: -2px;
+  }
+
+  .number-item {
+    height: 80px;
+  }
+
+  .stat-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .stat-description {
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .stats-container {
+    gap: 35px;
+    padding: 20px 10px;
+  }
+
+  .stat-number {
+    font-size: 70px;
+    height: 70px;
+  }
+
+  .number-item {
+    height: 70px;
+  }
+
+  .stat-title {
+    font-size: 17px;
+  }
+
+  .stat-description {
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ========================================== */
+/* 🌙 DARK MODE (Default Look)                */
+/* ========================================== */
+body.dark .stats-wrapper {
+  background-color: #0a0a0a !important;
+  color: #fff !important;
+}
+
+/* ========================================== */
+/* ☀️ LIGHT MODE (White Gradient Background)  */
+/* ========================================== */
+body.light .stats-wrapper {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #000 !important;
+}
+
+/* Ensure number and title colors stay as intended */
+body.light .stat-number {
+  color: #4a3a8c !important;
+}
+
+body.light .stat-title {
+  color: #ff6700 !important;
+}
+
+body.light .stat-description {
+  color: #333 !important;
+}
+
+/* Maintain spacing and structure (no card color changes) */
+body.light .stat-item,
+body.dark .stat-item {
+  background: transparent !important;
+}
+
+/* Optional — add a smooth transition for mode switch */
+.stats-wrapper {
+  transition: background 0.4s ease, color 0.4s ease;
+}

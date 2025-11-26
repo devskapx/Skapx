@@ -1,0 +1,19 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/src/assets/fonts/Gilroy-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Michroma", sans-serif;
+  src: url('/src/assets/fonts/Michroma-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}

@@ -1,0 +1,247 @@
+.whowehelp-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: #000;
+}
+
+/* Title */
+.whowehelp-title {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.whowehelp-title-border {
+  position: absolute;
+  inset: 0;
+  border: 4px solid #ff2ea6;
+  border-radius: 12px;
+}
+
+/* Flowing text */
+.flow-container {
+  overflow: hidden;
+  width: 100%;
+   max-width: 96%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.flowing-text {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* White rounded text blocks */
+.text-block {
+  font-size: 24px;
+  background: white;
+  color: black;
+  border: 3px solid #670BFF;
+  border-radius: 100px;
+  padding: 20px 25px;
+  white-space: nowrap;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-family: "Inter", sans-serif !important;
+}
+
+/* Button */
+.whowehelp-button {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #670BFF;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.whowehelp-button:hover {
+  background: #b3b3b3;
+}
+
+.whowehelp-title-btm{
+  margin-Bottom: 30px;
+  font-Size: 30px;
+  color:#670BFF; 
+  font-family: 'Gilroy-Black' !important;
+}
+
+.whowehelp-button img{
+  width: 20px;
+  height: 20px;
+  padding-left: 8px;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+
+/* Tablet */
+
+ @media (min-width: 600px) and (max-width: 1024px) {
+
+ }
+
+ /* Mobile */
+@media (max-width: 599px) {
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+
+.whowehelp-section .whowehelp-title {
+    padding: 1rem 2rem;
+    display: inline-block;
+    border: 0.25rem solid;
+    border-radius: 100px !important ;
+    border-image: conic-gradient(from var(--angle), var(--c2), rgb(255 255 255) 0.1turn, rgb(255 255 255) 0.15turn, var(--c2) 0.25turn) 30;
+    animation: borderRotate var(--d) linear infinite;
+    text-align: center;
+    background-clip: padding-box;
+}
+
+.whowehelp-section .whowehelp-title::before {
+  border-radius: 100px !important;
+}
+
+/* @property ensures --angle animates */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@keyframes borderRotate {
+  0% {
+    --angle: 90deg;
+  }
+  100% {
+    --angle: 450deg; /* rotate 360 + initial */
+  }
+}
+
+
+
+.whywehelpbor-top-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.whywehelpbor-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 15px 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
+
+.whywehelpbor-top-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, rgb(250, 167, 6) 0%, rgb(255, 103, 0) 82%);
+  background-clip: text;               /* Standard property */
+  -webkit-background-clip: text;       /* For Chrome & Safari */
+  -webkit-text-fill-color: transparent;
+  color: transparent;                  /* Optional fallback */
+}
+
+
+.whywehelpbor-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 3px; /* border thickness */
+  background: conic-gradient(from var(--r), #670BFF 30%, #232323 20%);
+  animation: rotating 3s linear infinite;
+  /* Add both WebKit-prefixed and standard mask */
+  -webkit-mask: linear-gradient(#919191 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  z-index: 0;
+}
+
+
+.whywehelpbor-top::before {
+  animation-duration: 1.5s;
+  filter: drop-shadow(0 0 8px #670BFF);
+}
+
+
+
+
+
+/* ========================================== */
+/* 🌙 DARK MODE (Default Look)                */
+/* ========================================== */
+body.dark .whowehelp-section {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* ========================================== */
+/* ☀️ LIGHT MODE (White Gradient Background)  */
+/* ========================================== */
+body.light .whowehelp-section {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #000 !important;
+}
+
+/* Keep the text blocks (white bubbles) unchanged */
+body.light .text-block {
+  background: white !important;
+  color: black !important;
+  border: 3px solid #670BFF !important;
+}
+
+/* Adjust heading and paragraph text */
+body.light .whychoose-top-title,
+body.light .whowehelp-title-btm,
+body.light .whywehelpbor-top-title,
+body.light p {
+  color: #000 !important;
+}
+
+/* Ensure the animated conic border still looks visible */
+body.light .whywehelpbor-top::before {
+  background: conic-gradient(from var(--r), #670BFF 20%, #ffffff 50%);
+  filter: drop-shadow(0 0 6px #ccc);
+}
+
+/* Smooth theme transition */
+.whowehelp-section {
+  transition: background 0.4s ease, color 0.4s ease;
+}

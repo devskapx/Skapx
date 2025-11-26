@@ -1,0 +1,201 @@
+.testimonials-section {
+  padding: 80px 0;
+  text-align: center;
+  background: #fdfdfd;
+  overflow: hidden;
+}
+
+.testimonial-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.testimonial-subheading {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.testimonial-rows {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  overflow: hidden;
+  height: 600px; /* Adjust height to control visible area */
+}
+
+.testimonial-row {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.testimonial-card {
+  background: linear-gradient(145deg, #171738, #0f0f26);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 280px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-info h4 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.testimonial-info p {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+
+.testimonials-section {
+  background: #0b0b1f;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.testimonial-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.testimonial-subheading {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 60px;
+}
+
+
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background: linear-gradient(145deg, #171738, #0f0f26);
+  border-radius: 20px;
+  padding: 30px;
+  width: 320px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #eaeaea;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.testimonial-info h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+/* ========================================== */
+/* 🌙 DARK MODE (Default Look)                */
+/* ========================================== */
+body.dark .testimonials-section {
+  background: #0a0a0a !important;
+  color: #fff !important;
+}
+
+/* ========================================== */
+/* ☀️ LIGHT MODE (White Gradient Background)  */
+/* ========================================== */
+body.light .testimonials-section {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #000 !important;
+}
+
+/* Keep testimonial cards the same in both modes */
+body.light .testimonial-card,
+body.dark .testimonial-card {
+  background: linear-gradient(145deg, #171738, #0f0f26) !important;
+  color: inherit !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Text colors inside cards */
+body.light .testimonial-text {
+  color: #ffffff !important;
+}
+
+body.light .testimonial-info h4 {
+  color: #ffffff !important;
+}
+
+body.light .testimonial-info p {
+  color: #828181 !important;
+}
+
+/* Adjust subheading and title for visibility */
+body.light .whychoose-top-title,
+body.light .testimonial-subheading {
+  color: #000 !important;
+}
+
+/* Smooth transition when switching themes */
+.testimonials-section {
+  transition: background 0.4s ease, color 0.4s ease;
+}

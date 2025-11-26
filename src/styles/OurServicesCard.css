@@ -1,0 +1,404 @@
+/* Container Styles - Isolated Section */
+.skpx-services-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Section Styles */
+.skpx-services-section {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.skpx-services-section::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Content Wrapper */
+.skpx-services-content {
+  min-height: 600vh;
+  background: #000;
+  position: relative;
+  width: 100%;
+}
+
+/* Stage 1 - Three Cards - Fixed within container */
+.skpx-stage-1 {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 0;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  padding: 0 2rem;
+  pointer-events: none;
+  z-index: 10;
+  height: 100vh;
+}
+
+.skpx-stage-1.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.skpx-card {
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  width: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.skpx-card-left {
+  height: 50vh;
+  background: linear-gradient(135deg, #670BFF 0%, #FF6700 100%);
+  transform-origin: bottom center;
+  transform: rotate(0deg) translateY(0);
+  z-index: 1;
+}
+
+.skpx-card-left.active {
+  opacity: 1;
+  width: 28%;
+  transform: rotate(-3deg) translateY(-10px);
+}
+
+.skpx-card-center {
+  height: 60vh;
+  background: linear-gradient(135deg, #670BFF 0%, #FF6700 100%);
+  box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transform: translateY(0) scale(1);
+  opacity: 0;
+  width: 0%;
+}
+
+.skpx-card-center.active {
+  opacity: 1;
+  width: 44%;
+  transform: translateY(-20px) scale(1.02);
+}
+
+.skpx-card-right {
+  height: 50vh;
+  background: linear-gradient(135deg, #670BFF 0%, #FF6700 100%);
+  transform-origin: bottom center;
+  transform: rotate(0deg) translateY(0);
+  z-index: 1;
+}
+
+.skpx-card-right.active {
+  opacity: 1;
+  width: 28%;
+  transform: rotate(3deg) translateY(-10px);
+}
+
+/* Stage 2, 3, 4, 5 - Sticky positioning */
+.skpx-stage-2,
+.skpx-stage-3,
+.skpx-stage-4,
+.skpx-stage-5 {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.7s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 10;
+  height: 100vh;
+}
+
+.skpx-stage-2.active,
+.skpx-stage-3.active,
+.skpx-stage-4.active,
+.skpx-stage-5.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Info Card (Stage 2 & 4) */
+.skpx-info-card {
+  color: white;
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 75%;
+  width: calc(100% - 4rem);
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Services Card (Stage 3 & 5) */
+.skpx-services-card {
+  color: white;
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 1100px;
+  width: calc(100% - 4rem);
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon Box */
+.skpx-icon-box {
+  background: linear-gradient(to bottom right, #9333ea, #ec4899, #f97316);
+  border-radius: 1rem;
+  padding: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 35%;
+  min-height: 100%;
+}
+
+.skpx-icon-box-2 {
+  background: #40414e9e;
+  border-radius: 1rem;
+  padding: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 35%;
+  min-height: 100%;
+  align-self: center;
+}
+
+.skpx-icon-hiring {
+  width: 180px;
+  height: 180px;
+}
+
+/* Info Content */
+.skpx-info-content {
+  flex: 1;
+}
+
+.skpx-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.skpx-title-purple {
+  color: #a855f7;
+}
+
+.skpx-title-orange {
+  color: #fb923c;
+}
+
+.skpx-description {
+  color: #d1d5db;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Services List */
+.skpx-services-list {
+  flex: 1;
+}
+
+.skpx-service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.skpx-service-icon{
+  width: 50px;
+  height: 50px;
+}
+
+.skpx-service-item:last-child {
+  margin-bottom: 0;
+}
+
+.skpx-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #a855f7;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.skpx-service-text {
+  flex: 1;
+}
+
+.skpx-service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.4;
+  color: white;
+}
+
+.skpx-service-desc {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skpx-info-card,
+  .skpx-services-card {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .skpx-title {
+    font-size: 2rem;
+  }
+
+  .skpx-icon-box,
+  .skpx-icon-hiring {
+    min-width: 120px;
+    min-height: 120px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .skpx-card-left.active,
+  .skpx-card-right.active {
+    width: 30%;
+  }
+
+  .skpx-card-center.active {
+    width: 40%;
+  }
+}
+
+
+
+
+
+/* MAIN HEADING */
+.skpx-main-heading {
+  text-align: center;
+  font-size: 46px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* SUBTITLE (2 LINES) */
+.skpx-main-subtitle {
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  color: #dcdcdc;
+  margin-bottom: 50px;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+/* ===========================================================
+   📲 TABLET (768PX – 1024PX)
+   =========================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+}
+
+
+
+/* ===========================================================
+   📱 MOBILE (MAX-WIDTH: 768PX)
+   =========================================================== */
+@media (max-width: 768px) {
+ .skpx-main-subtitle {
+    text-align: center;
+    font-size: 15px;
+    line-height: 23px;
+    color: #dcdcdc;
+    margin-bottom: 50px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.skpx-stage-1 {
+  display: block;
+}
+ .skpx-card-left.active, .skpx-card-right.active, .skpx-card-center.active {
+        width: 100%;
+    }
+    .skpx-card-left.active {
+    opacity: 1;
+    transform: rotate(0deg) translateY(-10px);
+    margin-bottom: 20px;
+}
+
+    .skpx-card-center.active {
+    opacity: 1;
+    transform: rotate(0deg) translateY(-10px);
+    margin-bottom: 20px;
+  }
+
+    .skpx-card-right.active {
+    opacity: 1;
+    transform: rotate(0deg) translateY(-10px);
+}
+.skpx-info-card{
+  margin: 0 1rem;
+  padding: 0rem;
+  gap: 1rem;
+}
+.skpx-description {
+  font-size: 15px;
+  text-align: center;
+}
+.skpx-stage-3{
+    display: block;
+}
+.skpx-services-card {
+  padding: 0rem;
+  gap: 1rem;
+}
+.skpx-title {
+  text-align: center;
+}
+}

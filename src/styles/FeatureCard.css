@@ -1,0 +1,75 @@
+.feature-card {
+  box-sizing: border-box;
+  width: 24rem; /* 96 * 4 px = 384px */
+  height: 24rem;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-card-bg {
+  box-sizing: border-box;
+  width: 24rem;
+  height: 24rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 32px;
+  background: rgba(6, 2, 19, 0.10);
+  box-shadow: 
+    inset 0 3px 9px 0 #670BFF,
+    inset 0 24px 36px 0 #9A89E6,
+    inset 0 72px 96px 0 #670BFF;
+  backdrop-blur: blur(16px);
+}
+
+.feature-card-title {
+  box-sizing: border-box;
+  color: black;
+  text-align: center;
+  font-size: 2.5rem; /* roughly text-4xl */
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: -0.72px;
+  position: absolute;
+  left: 50%;
+  top: 88px;
+  width: 253px;
+  height: 52px;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.feature-card-description {
+  box-sizing: border-box;
+  width: 301px;
+  height: 183px;
+  color: black;
+  text-align: center;
+  font-size: 1.25rem; /* roughly text-xl */
+  font-weight: 400;
+  line-height: 1.5rem; /* leading-6 */
+  opacity: 0.7;
+  position: absolute;
+  left: 42px;
+  top: 198px;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-card-icon {
+  position: absolute;
+  left: 158px;
+  top: -24px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 640px) {
+  .feature-card {
+    width: 100%;
+    max-width: 24rem;
+  }
+}

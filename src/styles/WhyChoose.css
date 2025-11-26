@@ -1,0 +1,296 @@
+.whychoose-section {
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 100px 0;
+  background-color: #000 !important;
+}
+
+.whychoose-container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1248px;
+  height: 24rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .whychoose-container {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+  }
+
+  .whychoose-section{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.feature-card {
+  box-sizing: border-box;
+  width: 24rem;
+  height: 26rem;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-card-bg {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 3px 9px #ffffff, inset 0 24px 36px #ffffff, inset 0px 126px 119px #670bff;
+    backdrop-filter: blur(12px);
+    background: rgba(6, 2, 19, 0.1);
+    position: absolute;
+    border-radius: 32px;
+    left: 0;
+    top: 0;
+}
+
+.feature-title {
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  font-weight: 700;
+  width: 253px;
+  height: 52px;
+  position: absolute;
+  left: 50%;
+  top: 88px;
+  transform: translateX(-50%);
+  white-space: pre-line;
+}
+
+
+.feature-description {
+  box-sizing: border-box;
+  width: 301px;
+  height: 183px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.7;
+  line-height: 1.5;
+  font-weight: 400;
+  position: absolute;
+  left: 42px;
+  top: 198px;
+}
+
+
+.feature-icon {
+  position: absolute;
+  left: 158px;
+  top: -24px;
+}
+
+
+.whychoose-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  position: relative;
+}
+
+.whychoose-top-icon {
+  width: 60px;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.whychoose-top-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+.whychoose-top:hover .whychoose-top-icon {
+  transform: translateX(10px);
+}
+
+/* 🔹 New: top title area */
+.whychoose-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 80px;
+  width: 30%;
+  justify-self: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+ cursor: default; 
+}
+
+.whychoose-top {
+  text-align: center;
+}
+
+.whychoose-top-icon {
+  width: 50px;
+  height: auto;
+}
+
+/* Conic gradient running border using CSS @property */
+@property --r {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.whychoose-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 3px; /* border thickness */
+  background: conic-gradient(from var(--r), #d5d5d5 30%, #232323 20%);
+  animation: rotating 3s linear infinite;
+  /* Add both WebKit-prefixed and standard mask */
+  -webkit-mask: linear-gradient(#919191 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  z-index: 0;
+}
+
+
+/* Running gradient animation */
+@keyframes rotating {
+  0% {
+    --r: 0deg;
+  }
+  100% {
+    --r: 360deg;
+  }
+}
+
+/* Optional: hover acceleration / glow */
+.whychoose-top::before {
+  animation-duration: 1.5s;
+  filter: drop-shadow(0 0 8px #670BFF);
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================ */
+/* 🌙 DARK MODE (Default Appearance) */
+/* ================================ */
+body.dark .whychoose-section {
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+/* ================================ */
+/* ☀️ LIGHT MODE BACKGROUND CHANGE   */
+/* ================================ */
+body.light .whychoose-section {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+}
+
+/* Keep feature cards unchanged */
+body.light .feature-card,
+body.dark .feature-card {
+  background: none !important;
+  color: inherit !important;
+}
+
+/* Ensure text & borders remain consistent */
+body.light .whychoose-top-title,
+body.light .feature-title,
+body.light .feature-description {
+  color: #000 !important;
+}
+
+body.dark .whychoose-top-title,
+body.dark .feature-title,
+body.dark .feature-description {
+  color: #fff !important;
+}
+
+/* Make sure the rotating top border matches the mode */
+body.light .whychoose-top::before {
+  background: conic-gradient(from var(--r), #670BFF 20%, #ffffff 50%);
+  filter: drop-shadow(0 0 6px #ccc);
+}
+
+body.dark .whychoose-top::before {
+  background: conic-gradient(from var(--r), #d5d5d5 30%, #232323 20%);
+  filter: drop-shadow(0 0 8px #670BFF);
+}
+
+/* 🌞 Light mode version of feature-card-bg */
+body.light .feature-card-bg {
+  box-shadow: inset 0 3px 0px #ffffff,
+              inset 0 0px 0px #ffffff,
+              inset 0px 67px 67px #6000ff !important;
+}
+
+@media (max-width: 768px) {
+  .whychoose-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 95%;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+.whychoose-top-title{
+  font-size: 21px;
+}
+}
+
+
+/* 🎥 GIF video at the bottom of card */
+.feature-video-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  z-index: 0;
+}
+
+.feature-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  border-radius: 0 0 32px 32px;
+}

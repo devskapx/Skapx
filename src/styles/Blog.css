@@ -362,3 +362,33 @@ body.light {
 
 
 
+/* ========================================== */
+/* 🌙 DARK MODE (Default Look)                */
+/* ========================================== */
+body.dark .blogcards-container {
+  background-color: #0a0a0a !important;
+  color: #fff !important;
+}
+
+/* ========================================== */
+/* ☀️ LIGHT MODE (White Gradient Background)  */
+/* ========================================== */
+body.light .blogcards-container {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #000 !important;
+}
+
+body.light .blogcard-large{
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #ffffff !important;
+}
+
+body.light .blogcard-small{
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #ffffff !important;
+}
+
+body.light .tag-top-left span, .tag-bottom-left span, .blog-meta{
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #000000 !important;
+}

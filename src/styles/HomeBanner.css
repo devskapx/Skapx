@@ -35,6 +35,13 @@
   top: 50%;
 }
 
+.middle-description {
+  color: #ff6700;
+  font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
 .hero-inner {
   display: flex;
   flex-direction: column;
@@ -80,13 +87,6 @@
   transition: color 0.3s ease;
 }
 
-.hero-description {
-  color: #D6D6D6;
-  text-align: center;
-  font-size: 27px;
-  line-height: 40px;
-  transition: color 0.3s ease;
-}
 
 /* 🔹 Button */
 .hero-button {
@@ -98,6 +98,26 @@
   background: transparent;
   transition: all 0.3s ease;
   cursor: pointer;
+}
+
+/* 🔹 Button */
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  border-radius: 999px;
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  color: #ff6700;
+  background: transparent;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
 
@@ -196,11 +216,6 @@
   transition: color 0.3s ease;
 }
 
-.middle-description{
-  color: #FF6700;
-  font-size: 30px;
-  line-height: 35px;
-}
 
 /* Overlay to create inner masking effect (like your div::after) */
 .hero-button::after {
@@ -342,7 +357,16 @@
 }
 
 
-
+.hero-description {
+  color: #d6d6d6;
+  font-size: clamp(0.95rem, 2.8vw, 1.5rem);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+  padding: 0 1rem;
+  text-align: center;
+  font-weight: 400;
+}
 
 
 
@@ -468,41 +492,6 @@
   transition: color 0.3s ease;
 }
 
-.middle-description {
-  color: #ff6700;
-  font-size: clamp(1.1rem, 3.5vw, 1.8rem);
-  line-height: 1.4;
-  font-weight: 600;
-}
-
-.hero-description {
-  color: #d6d6d6;
-  font-size: clamp(0.95rem, 2.8vw, 1.7rem);
-  line-height: 1.5;
-  margin-top: 0.5rem;
-  transition: color 0.3s ease;
-  padding: 0 1rem;
-}
-
-/* 🔹 Button */
-.hero-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 32px;
-  border-radius: 999px;
-  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
-  font-weight: 700;
-  color: #ff6700;
-  background: transparent;
-  border: none;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  z-index: 0;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
 
 .hero-button::before {
   content: "";

@@ -388,7 +388,21 @@ body.light .blogcard-small{
   color: #ffffff !important;
 }
 
-body.light .tag-top-left span, .tag-bottom-left span, .blog-meta{
-  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
-  color: #000000 !important;
+body.light .tag-top-left span,
+body.light .tag-bottom-left span,
+body.light .blog-meta {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
+  color: #000000;
+}
+
+body.dark .tag-top-left span,
+body.dark .tag-bottom-left span,
+body.dark .blog-meta {
+  background: linear-gradient(to bottom right, #2D2D2D);
+  color: #FF6700;
+}
+
+body.dark .testimonials-section {
+  background-color: #0a0a0a !important;
+  background-image: url("/images/Property1V.svg") !important;
 }

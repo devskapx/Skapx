@@ -1,11 +1,13 @@
 import React, { useRef, useState } from "react";
 import { CircleArrowRight, X } from "lucide-react";
 import titleImage from "../../public/images/circle.png";
+import bgImage from "../../public/images/Property1V.svg";
 import "../styles/WorkSection.css";
 
 const WorkSection = () => {
   const titleRef = useRef(null);
   const [showCards, setShowCards] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   const projectCards = [
     { id: 1, title: "Mobile App", type: "dark" },
@@ -14,15 +16,25 @@ const WorkSection = () => {
     { id: 4, title: "Mobile App", type: "dark" },
   ];
 
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowCards(false);
+      setIsClosing(false);
+    }, 500);
+  };
+
   return (
     <>
-      <section className="works-section">
-
+        <section
+              className="works-section"
+              style={{ backgroundImage: `url(${bgImage})` }}
+            >
         {/* LEFT */}
         <div className="works-left">
           <div className="worksectionhed-top" ref={titleRef}>
             <img src={titleImage} alt="Title Icon" className="whychoose-top-icon" />
-            <h2 className="whychoose-top-title">
+                  <h2 className="whychoose-top-title">
               Our{" "}
               <span
                 style={{
@@ -65,23 +77,25 @@ const WorkSection = () => {
         </div>
       </section>
 
-      {/* MODAL */}
+      {/* SIDE PANEL */}
       {showCards && (
-        <div className="modal-overlay" onClick={() => setShowCards(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setShowCards(false)}>
+        <>
+          <div className="overlay-backdrop" onClick={handleClose}></div>
+
+          <div className={`cards-container ${isClosing ? "closing" : ""}`}>
+            <button className="modal-close" onClick={handleClose}>
               <X size={24} />
             </button>
 
             <div className="cards-grid">
               {projectCards.map((card) => (
-                <div key={card.id} className={`project-card ${card.type}`}>
+                <div key={card.id} className={`project-card ${card.type} animate`}>
                   <p>{card.title}</p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );

@@ -168,3 +168,42 @@ body.dark .theme-switch .ball {
     display: none;
   }
 }
+
+
+/* Desktop Menu */
+.desktop-menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.desktop-menu li a {
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.desktop-menu li a:hover {
+  color: #7c3aed; /* Light purple */
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desktop-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

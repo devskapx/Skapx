@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import bgImage from "../../public/images/Property1V.svg";
 import "../styles/Blog.css";
 
 const Blog = () => {
@@ -11,7 +12,15 @@ const Blog = () => {
   };
 
   return (
-    <div className="blogcards-container">
+    <div
+  className="blogcards-container"
+  style={{
+    backgroundImage: `url(${bgImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
 
       <div className="whychoose-top" ref={titleRef}>
         <img src="/images/circle.png" alt="Title Icon" className="whychoose-top-icon" />

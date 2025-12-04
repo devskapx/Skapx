@@ -4,7 +4,6 @@
   justify-content: center;
   margin: 0;
   padding: 100px 0;
-  background-color: #000 !important;
 }
 
 .whychoose-container {
@@ -103,14 +102,25 @@
   position: relative;
 }
 
-.whychoose-top-icon {
-  width: 60px;
-  height: auto;
-  transition: transform 0.4s ease;
+/* 🔹 New: top title area */
+.whychoose-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 80px;
+  width: 26%;
+  justify-self: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+ cursor: default; 
+ text-align: center;
 }
 
+
 .whychoose-top-title {
-  font-size: 1.7rem;
+  font-size: 30px;
   font-weight: 700;
   color: #fff;
 }
@@ -120,28 +130,11 @@
   transform: translateX(10px);
 }
 
-/* 🔹 New: top title area */
-.whychoose-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 80px;
-  width: 30%;
-  justify-self: center;
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
- cursor: default; 
-}
-
-.whychoose-top {
-  text-align: center;
-}
 
 .whychoose-top-icon {
   width: 50px;
-  height: auto;
+  height: 50px;
+  transition: transform 0.4s ease;
 }
 
 /* Conic gradient running border using CSS @property */
@@ -204,15 +197,20 @@
 /* 🌙 DARK MODE (Default Appearance) */
 /* ================================ */
 body.dark .whychoose-section {
-  background-color: #000 !important;
-  background-image: none !important;
+  background-color: #000 !important;  /* keep only background color */
 }
 
 /* ================================ */
 /* ☀️ LIGHT MODE BACKGROUND CHANGE   */
 /* ================================ */
 body.light .whychoose-section {
-  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  background-color: #fff !important;   /* keep only color */
+}
+
+body.dark .whychoose-section {
+  background-image: url("../../public/images/Property1V.svg") !important;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Keep feature cards unchanged */
@@ -242,8 +240,8 @@ body.light .whychoose-top::before {
 }
 
 body.dark .whychoose-top::before {
-  background: conic-gradient(from var(--r), #d5d5d5 30%, #232323 20%);
-  filter: drop-shadow(0 0 8px #670BFF);
+    background: conic-gradient(from var(--r), #d2d2d2 2%, #0c0c0c 50%);
+    filter: drop-shadow(0 0 8px #670BFF);
 }
 
 /* 🌞 Light mode version of feature-card-bg */

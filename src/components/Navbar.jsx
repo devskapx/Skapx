@@ -40,6 +40,13 @@ export default function Navbar() {
         <img src={logo} alt="Logo" className="logo" />
       </div>
 
+      {/* Desktop Menu (Center) */}
+      <ul className="desktop-menu">
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/services">Services</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+      </ul>
+
       {/* Hamburger Icon */}
       <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
         <span></span>

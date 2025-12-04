@@ -28,7 +28,6 @@
 /* Content Wrapper */
 .skpx-services-content {
   min-height: 600vh;
-  background: #000;
   position: relative;
   width: 100%;
 }
@@ -423,4 +422,17 @@ body.light .skpx-services-content {
 body.light .skpx-service-title {
   background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
   color: #000 !important;
+}
+
+
+.skpx-services-content {
+  min-height: 600vh;
+  width: 100%;
+  position: relative;
+
+  background-image: url("/images/ourservicesc.png");  /* ✔ Correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

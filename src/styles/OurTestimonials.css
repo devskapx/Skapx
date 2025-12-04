@@ -13,9 +13,9 @@
 }
 
 .testimonial-subheading {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 60px;
 }
 
 .testimonial-rows {
@@ -89,14 +89,6 @@
   font-weight: 700;
   margin-bottom: 10px;
 }
-
-.testimonial-subheading {
-  font-size: 1.2rem;
-  color: #aaa;
-  margin-bottom: 60px;
-}
-
-
 
 .testimonial-cards {
   display: flex;
@@ -198,4 +190,8 @@ body.light .testimonial-subheading {
 /* Smooth transition when switching themes */
 .testimonials-section {
   transition: background 0.4s ease, color 0.4s ease;
+}
+body.dark .testimonials-section {
+  background-color: #0a0a0a !important;
+  background-image: url("/images/Property1V.svg") !important;
 }

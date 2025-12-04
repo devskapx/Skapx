@@ -43,8 +43,9 @@ const testimonials = [
 
 export default function OurTestimonials() {
   const titleRef = useRef(null);
+  const h3Ref = useRef(null); // ⭐ NEW: h3 animation ref
 
-  // GSAP animation for the heading
+  // Title GSAP animation
   useEffect(() => {
     const el = titleRef.current;
     gsap.fromTo(
@@ -53,12 +54,34 @@ export default function OurTestimonials() {
       {
         opacity: 1,
         x: 0,
-        duration: 1.5,
+        duration: 3,
         ease: "power3.out",
         scrollTrigger: {
           trigger: el,
           start: "top 85%",
           toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
+  // ⭐ NEW: h3 bottom → top Scroll Animation
+  useEffect(() => {
+    const el = h3Ref.current;
+
+    gsap.fromTo(
+      el,
+      { y: 80, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+          end: "top 50%",
+          scrub: false,
         },
       }
     );
@@ -101,7 +124,7 @@ export default function OurTestimonials() {
       className="testimonials-section"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      {/* Our Testimonials Title with Scroll Animation */}
+      {/* TOP TITLE */}
       <div className="whychoose-top" ref={titleRef}>
         <img src={titleImage} alt="Title Icon" className="whychoose-top-icon" />
         <h2 className="whychoose-top-title">
@@ -119,17 +142,17 @@ export default function OurTestimonials() {
         </h2>
       </div>
 
-      <h3 className="testimonial-subheading">
-        Click the button to add in the list by starting the work together.
+      {/* ⭐ NEW Animated H3 */}
+      <h3 className="testimonial-subheading" ref={h3Ref}>
+        Don't take our word for it. <br /> Over
+        <span style={{ color: "#670BFF", fontWeight: "700" }}> 100+ </span>
+        people <span style={{ color: "#FF6700", fontWeight: "700" }}>trust</span> us.
       </h3>
 
+      {/* SCROLLING ROWS */}
       <div className="testimonial-rows">
-        {/* Row 1 - bottom to top */}
-        <motion.div
-          className="testimonial-row"
-          variants={scrollVariantUp}
-          animate="animate"
-        >
+        {/* Row 1 */}
+        <motion.div className="testimonial-row" variants={scrollVariantUp} animate="animate">
           {repeatedTestimonials.map((t, i) => (
             <div className="testimonial-card" key={`up-${i}`}>
               <p className="testimonial-text">"{t.text}"</p>
@@ -144,12 +167,8 @@ export default function OurTestimonials() {
           ))}
         </motion.div>
 
-        {/* Row 2 - top to bottom */}
-        <motion.div
-          className="testimonial-row"
-          variants={scrollVariantDown}
-          animate="animate"
-        >
+        {/* Row 2 */}
+        <motion.div className="testimonial-row" variants={scrollVariantDown} animate="animate">
           {repeatedTestimonials.map((t, i) => (
             <div className="testimonial-card" key={`down-${i}`}>
               <p className="testimonial-text">"{t.text}"</p>
@@ -164,12 +183,8 @@ export default function OurTestimonials() {
           ))}
         </motion.div>
 
-        {/* Row 3 - bottom to top */}
-        <motion.div
-          className="testimonial-row"
-          variants={scrollVariantUp}
-          animate="animate"
-        >
+        {/* Row 3 */}
+        <motion.div className="testimonial-row" variants={scrollVariantUp} animate="animate">
           {repeatedTestimonials.map((t, i) => (
             <div className="testimonial-card" key={`up2-${i}`}>
               <p className="testimonial-text">"{t.text}"</p>

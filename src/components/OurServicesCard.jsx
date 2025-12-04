@@ -3,7 +3,6 @@ import "../styles/OurServicesCard.css";
 import LogoImage from "../../public/images/SKAPX-SER-LOGO.svg";
 import titleImage from "../../public/images/circle.png";
 import ServiceIcon from "../../public/images/Ser-Icon.png";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

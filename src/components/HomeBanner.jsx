@@ -1,13 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/HomeBanner.css";
-import hoverImage from "../../public/images/Property.svg";
 
 export const HomeBanner = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [showImage, setShowImage] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  const timerRef = useRef(null);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -24,41 +19,18 @@ export const HomeBanner = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setCursorPos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-
-    setShowImage(false);
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => setShowImage(true), 100);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setShowImage(false);
-    if (timerRef.current) clearTimeout(timerRef.current);
-  };
-
   return (
-    <section
-      className={`hero-section ${darkMode ? "dark" : "light"}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
-    >
-      {/* 🔹 Background Video */}
-      <video
+    <section className={`hero-section ${darkMode ? "dark" : "light"}`}>
+      {/* Background Video */}
+     <video
         className="hero-video-bg"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        playsInline={true}
       >
         <source src="/videos/hero-banner.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
 
       <div className="hero-container">
@@ -131,18 +103,6 @@ export const HomeBanner = () => {
           </div>
         </div>
       </div>
-
-      {isHovered && showImage && (
-        <img
-          src={hoverImage}
-          alt="Hover Effect"
-          className="hover-image"
-          style={{
-            left: `${cursorPos.x}px`,
-            top: `${cursorPos.y}px`,
-          }}
-        />
-      )}
     </section>
   );
 };

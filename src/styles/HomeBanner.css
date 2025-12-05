@@ -1,426 +1,4 @@
 /* ===================== */
-/* LIGHT MODE DEFAULTS   */
-/* ===================== */
-
-.hero-section {
-  box-sizing: border-box;
-  width: 100%;
-  height: 799px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(211deg, #280069 0%, #000000 52%);
-  color: #ffffff;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.hero-container {
-  width: 100%;
-  max-width: 1456px;
-  height: 100%;
-  position: relative;
-}
-
-.hero-content {
-  display: flex;
-  width: 100%;
-  max-width: 1163px;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  height: 398px;
-  left: 50%;
-  top: 50%;
-}
-
-.middle-description {
-  color: #ff6700;
-  font-size: clamp(1.1rem, 3.5vw, 1.8rem);
-  line-height: 1.4;
-  font-weight: 400;
-}
-
-.hero-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-}
-
-/* 🔹 Badge */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #FF6700;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 999px;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(103, 11, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.badge-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.badge-text {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-/* 🔹 Hero text */
-.hero-heading {
-  text-align: center;
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 100px;
-  letter-spacing: -1.92px;
-  color: #ffffff;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-
-/* 🔹 Button */
-.hero-button {
-  display: flex;
-  align-items: flex-start;
-  padding: 23px;
-  border-radius: 999px;
-  border: 5px solid rgb(255 255 255 / 10%);
-  background: transparent;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-/* 🔹 Button */
-.hero-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 20px;
-  border-radius: 999px;
-  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
-  font-weight: 700;
-  color: #ff6700;
-  background: transparent;
-  border: none;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  z-index: 0;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-
-.hero-button-text {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
-  color: #FF6700;
-}
-
-.hero-image {
-  width: 180px;
-  height: 180px;
-}
-
-/* ===================== */
-/* 🌙 DARK MODE STYLES   */
-/* ===================== */
-@media (prefers-color-scheme: dark) {
-  .hero-section {
-    background: #0a0a0a;
-    color: #ffffff;
-  }
-
-  .hero-heading {
-    color: #ffffff;
-  }
-
-  .hero-highlight {
-    color: #a066ff;
-  }
-
-  .hero-description {
-    color: #e0e0e0;
-  }
-
-  .hero-button {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .hero-button:hover {
-    border-color: #a066ff;
-  }
-
-  .badge {
-    background: linear-gradient(90deg, #a066ff 0%, #670BFF 100%);
-    box-shadow: 0 0 10px rgba(160, 102, 255, 0.4);
-  }
-}
-
-/* ===================== */
-/* RESPONSIVE            */
-/* ===================== */
-@media (max-width: 768px) {
-  .hero-heading {
-    font-size: 64px;
-    line-height: 70px;
-  }
-
-  .hero-description {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-heading {
-    font-size: 40px;
-    line-height: 52px;
-  }
-
-  .hero-description {
-    font-size: 18px;
-  }
-
-  .hero-button-text {
-    font-size: 18px;
-  }
-}
-
-
-
-/* Base button styles (from your Hero) */
-.hero-button {
-  position: relative;
-  display: inline-block;
-  padding: 15px 20px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #FF6700;
-  border-radius: 999px;
-  overflow: hidden;
-  cursor: pointer;
-  z-index: 0;
-  border: none;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-
-/* Overlay to create inner masking effect (like your div::after) */
-.hero-button::after {
-  content: "";
-  display: block;
-  position: absolute;
-  inset: 5px; /* thickness of inner mask */
-  border-radius: 999px;
-  z-index: 1;
-  transition: opacity 0.3s ease;
-}
-
-/* Optional hover effect */
-.hero-button::after {
-  opacity: 0.5;
-}
-
-/* Conic gradient running border using CSS @property */
-@property --r {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 0deg;
-}
-
-.hero-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  padding: 3px; /* border thickness */
-  background: conic-gradient(from var(--r), #670bff 10%, #232323 20%);
-  animation: rotating 3s linear infinite;
-  /* Add both WebKit-prefixed and standard mask */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-
-  z-index: 0;
-}
-
-
-/* Running gradient animation */
-@keyframes rotating {
-  0% {
-    --r: 0deg;
-  }
-  100% {
-    --r: 360deg;
-  }
-}
-
-/* Optional: hover acceleration / glow */
-.hero-button:hover::before {
-  animation-duration: 1.5s;
-  filter: drop-shadow(0 0 8px #670BFF);
-}
-
-
-.hero-section {
-  position: relative;
-  overflow: hidden;
-  cursor: default; /* system cursor visible */
-}
-
-/* Hover image style */
-.hover-image {
-  position: absolute;
-  width: 120px;
-  height: auto;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.7);
-  opacity: 0;
-  animation: appearSmooth 0.4s ease forwards;
-  filter: drop-shadow(0 0 12px rgba(103, 11, 255, 0.5));
-  z-index: 10;
-}
-
-/* Smooth appear animation */
-@keyframes appearSmooth {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.6);
-    filter: blur(6px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(0);
-  }
-}
-
-.hover-image {
-  animation: appearSmooth 0.4s ease forwards; 
-}
-
-
-
-
-
-
-
-
-/* 🔹 Background Video Styling */
-.hero-video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.4; /* adjust brightness */
-  filter: brightness(70%) contrast(110%);
-}
-
-/* Optional overlay for readability */
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(211deg, rgba(40, 0, 105, 0.8) 0%, rgba(0, 0, 0, 0.8) 52%);
-  z-index: 0;
-}
-
-.hero-container,
-.hero-content,
-.hero-inner {
-  position: relative;
-  z-index: 1;
-}
-
-
-.hero-section {
-  position: relative;
-  overflow: hidden;
-}
-
-
-.hero-description {
-  color: #d6d6d6;
-  font-size: clamp(0.95rem, 2.8vw, 1.5rem);
-  line-height: 1.5;
-  margin-top: 0.5rem;
-  transition: color 0.3s ease;
-  padding: 0 1rem;
-  text-align: center;
-  font-weight: 400;
-}
-
-
-
-/* Theme-Controlled Backgrounds */
-.hero-section.dark {
-  background: linear-gradient(211deg, #280069 0%, #000000 52%);
-  color: #fff;
-}
-
-.hero-section.light {
-  background: linear-gradient(to bottom right, #E9D5FF, #D8B4FE, #E9D5FF);
-  color: #000;
-}
-
-/* Adjust text color in light mode */
-.hero-section.light .hero-heading {
-  color: #000;
-}
-
-.hero-section.light .hero-description {
-  color: #222;
-}
-
-.hero-section.light .middle-description {
-  color: #670BFF;
-}
-
-/* Badge styling for light mode */
-.hero-section.light .badge {
-  background: #670BFF;
-  color: #fff;
-}
-
-/* Adjust overlay for light mode */
-.hero-section.light::after {
-  background: linear-gradient(
-    to bottom right,
-    rgba(233, 213, 255, 0.8),
-    rgba(216, 180, 254, 0.8)
-  );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===================== */
 /* BASE STYLES           */
 /* ===================== */
 
@@ -444,6 +22,7 @@
   height: 100%;
   position: relative;
   padding: 1rem;
+  z-index: 1;
 }
 
 .hero-content {
@@ -456,6 +35,7 @@
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
+  z-index: 1;
 }
 
 .hero-inner {
@@ -464,34 +44,105 @@
   align-items: center;
   gap: 1.5rem;
   width: 100%;
+  z-index: 1;
 }
 
-/* 🔹 Badge */
+/* ===================== */
+/* BADGE                 */
+/* ===================== */
+
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: #ff6700;
   color: white;
-  padding: 8px 18px;
+  padding: 10px 24px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 0.9rem;
   box-shadow: 0 0 10px rgba(103, 11, 255, 0.2);
   transition: all 0.3s ease;
 }
 
-/* 🔹 Headings */
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-text {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ===================== */
+/* HEADINGS & TEXT       */
+/* ===================== */
+
 .hero-heading {
+  text-align: center;
   font-size: clamp(2rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -1px;
-  color: #fff;
+  color: #ffffff;
   margin: 0;
   transition: color 0.3s ease;
 }
 
+.middle-description {
+  color: #ff6700;
+  font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0;
+}
+
+.hero-description {
+  color: #d6d6d6;
+  font-size: clamp(0.95rem, 2.8vw, 1.5rem);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+  padding: 0 1rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* ===================== */
+/* ANIMATED BUTTON       */
+/* ===================== */
+
+.hero-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  border-radius: 999px;
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  color: #ff6700;
+  background: transparent;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.hero-button span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Rotating gradient border */
+@property --r {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
 
 .hero-button::before {
   content: "";
@@ -501,13 +152,20 @@
   padding: 3px;
   background: conic-gradient(from var(--r), #670bff 10%, #232323 20%);
   animation: rotating 3s linear infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   z-index: 0;
+}
+
+@keyframes rotating {
+  0% {
+    --r: 0deg;
+  }
+  100% {
+    --r: 360deg;
+  }
 }
 
 .hero-button:hover::before {
@@ -515,52 +173,18 @@
   filter: drop-shadow(0 0 8px #670bff);
 }
 
-@property --r {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 0deg;
-}
+/* ===================== */
+/* BACKGROUND VIDEO      */
+/* ===================== */
 
-@keyframes rotating {
-  0% { --r: 0deg; }
-  100% { --r: 360deg; }
-}
-
-/* Hover Image */
-.hover-image {
-  position: absolute;
-  width: 100px;
-  height: auto;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.7);
-  opacity: 0;
-  animation: appearSmooth 0.4s ease forwards;
-  filter: drop-shadow(0 0 12px rgba(103, 11, 255, 0.5));
-  z-index: 10;
-}
-
-@keyframes appearSmooth {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.6);
-    filter: blur(6px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(0);
-  }
-}
-
-/* 🔹 Background Video */
 .hero-video-bg {
   position: absolute;
-  top: 0;
+  top: -10%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 30%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 1;
   opacity: 0.4;
   filter: brightness(70%) contrast(110%);
 }
@@ -570,20 +194,18 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(211deg, rgba(40, 0, 105, 0.8) 0%, rgba(0, 0, 0, 0.8) 52%);
+  background: linear-gradient(
+    211deg,
+    rgba(40, 0, 105, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 52%
+  );
   z-index: 0;
 }
 
-.hero-container,
-.hero-content,
-.hero-inner {
-  position: relative;
-  z-index: 1;
-}
+/* ===================== */
+/* DARK & LIGHT MODE     */
+/* ===================== */
 
-/* ===================== */
-/* 🌙 DARK & LIGHT MODE  */
-/* ===================== */
 .hero-section.dark {
   background: linear-gradient(211deg, #280069 0%, #000000 52%);
   color: #fff;
@@ -620,7 +242,7 @@
 }
 
 /* ===================== */
-/* RESPONSIVE MEDIA QUERIES */
+/* RESPONSIVE QUERIES    */
 /* ===================== */
 
 /* Tablets */
@@ -660,6 +282,10 @@
     padding: 6px 16px;
   }
 
+  .badge-text {
+    font-size: 0.85rem;
+  }
+
   .hero-button {
     padding: 12px 24px;
   }
@@ -687,20 +313,42 @@
     font-size: 1rem;
   }
 
-  .badge-text{
-    font-size: 14px;
+  .badge-text {
+    font-size: 0.75rem;
   }
 
   .badge {
     font-size: 0.75rem;
     gap: 5px;
-  }
-
-  .hover-image {
-    width: 80px;
+    padding: 8px 18px;
   }
 
   .hero-section {
     min-height: 700px;
+  }
+}
+
+/* Dark mode media query */
+@media (prefers-color-scheme: dark) {
+  .hero-section {
+    background: #0a0a0a;
+    color: #ffffff;
+  }
+
+  .hero-heading {
+    color: #ffffff;
+  }
+
+  .hero-description {
+    color: #e0e0e0;
+  }
+
+  .hero-button {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .badge {
+    background: linear-gradient(90deg, #a066ff 0%, #670bff 100%);
+    box-shadow: 0 0 10px rgba(160, 102, 255, 0.4);
   }
 }

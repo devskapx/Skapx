@@ -28,29 +28,34 @@ const Footer = () => {
 
     setLoading(true);
 
+    // 1️⃣ INTERNAL EMAIL TO BOSS + HR + TL (FIXED FORMAT)
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // <-- replace
-        "YOUR_TEMPLATE_ID", // <-- replace
+        "service_wiuqit8", // Replace with your FULL service ID
+        "template_t82nu1q", // Replace with FULL template ID
         {
           from_name: form.name,
-          from_email: form.email,
+          reply_to: form.email,
           phone: form.phone,
+
+          // ⭐ FIXED Multiple Recipient Format (Correct commas)
+          to_email:
+            "info@skapx.com, hr@skapx.com, sanjay@skapx.com, kalai@skapx.com",
         },
-        "YOUR_PUBLIC_KEY" // <-- replace
+        "lkei2AozOmjDGG2KS" // Replace with your FULL public key
       )
-      .then(
-        (response) => {
-          alert("Thank you! Your message has been sent successfully.");
-          setForm({ name: "", email: "", phone: "" });
-          setLoading(false);
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          alert("Failed to send message. Try again.");
-          setLoading(false);
-        }
-      );
+      .then(() => {
+        console.log("Internal email sent successfully!");
+
+        alert("Thank you! Your message has been sent successfully.");
+        setForm({ name: "", email: "", phone: "" });
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Failed to send message. Try again.");
+        setLoading(false);
+      });
   };
 
   const quickLinks = [
@@ -91,14 +96,16 @@ const Footer = () => {
   return (
     <main className="contact-main">
       <div className="contact-container">
-
+        
         {/* Contact Form */}
         <section className="contact-form-section">
           <div className="form-box">
             <h3 className="form-heading">GET IN TOUCH</h3>
             <h2 className="form-subtitle">
               Seeking personalized support?{" "}
-              <span className="highlight-text-footr">Request a call from our team</span>
+              <span className="highlight-text-footr">
+                Request a call from our team
+              </span>
             </h2>
 
             <form onSubmit={handleSubmit} className="form">
@@ -141,11 +148,10 @@ const Footer = () => {
           </div>
         </section>
 
-
         {/* Info Section */}
         <section className="info-section">
           <p className="info-desc">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
 
           <div className="links-contact-row">
@@ -154,9 +160,7 @@ const Footer = () => {
               <ul>
                 {quickLinks.map((link) => (
                   <li key={link.label}>
-                    <button className="link-btn">
-                      {link.label}
-                    </button>
+                    <button className="link-btn">{link.label}</button>
                   </li>
                 ))}
               </ul>

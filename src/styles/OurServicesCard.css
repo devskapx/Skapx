@@ -295,6 +295,7 @@
     min-height: 120px;
     width: 120px;
     height: 120px;
+    place-self: center;
   }
 
   .skpx-card-left.active,

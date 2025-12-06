@@ -88,16 +88,32 @@
   padding-left: 8px;
 }
 
+.whywehelpbor-top-text{
+  margin-top: 30px;
+  color: #fff;
+  font-size: 29px;
+}
+
 /* ----------------- RESPONSIVE ----------------- */
-
-/* Tablet */
-
- @media (min-width: 600px) and (max-width: 1024px) {
-
- }
 
  /* Mobile */
 @media (max-width: 599px) {
+.text-block {
+    font-size: 19px;
+    padding: 13px 14px;
+}
+.whowehelp-title-btm {
+    font-Size: 24px;
+}
+.whywehelpbor-top-title {
+    font-size: 20px;
+}
+.whywehelpbor-top-text{
+  margin-top: 30px;
+  color: #fff;
+  font-size: 24px;
+}
+
 
 }
 

@@ -354,8 +354,18 @@ body.light {
   display: block;
 }
 .blogcard-small-image {
-    width: 18rem;
+    width: 23rem;
     position: relative;
+}
+.tag-top-left {
+    position: absolute;
+    top: 10rem;
+    left: 0rem;
+}
+.tag-bottom-left {
+    position: absolute;
+    bottom: 2.6rem;
+    left: 0rem;
 }
 }
 

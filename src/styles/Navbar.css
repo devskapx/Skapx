@@ -115,7 +115,7 @@ body.dark .theme-switch .ball {
 /* Fullscreen Overlay Menu */
 .overlay-menu {
   position: fixed;
-  top: -105%;
+  top: -120%;
   left: 0;
   width: 100%;
   height: 100vh;

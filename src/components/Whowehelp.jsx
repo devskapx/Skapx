@@ -101,10 +101,10 @@ export default function Whowehelp() {
           Click Me
         </p>  
       </button>
-
-      <p style={{ marginTop: "30px", color: "white", fontSize: "29px" }}>
-        Click the button to add in the list <br/>by starting the work together.
-      </p>
+          <p className="whywehelpbor-top-text">
+          Click the button to add in the list <br/>by starting the work together.
+        </p> 
+      
     </section>
   );
 }

@@ -130,13 +130,13 @@ const FeatureCard = ({ title, description, icon, videoSrc }) => {
       </div>
 
       {/* 🎥 GIF section */}
-      <div className="feature-video-container">
+      {/* <div className="feature-video-container">
         <img
           src={videoSrc}
           alt="Feature animation"
           className="feature-video"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

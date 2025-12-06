@@ -22,7 +22,7 @@ export const HomeBanner = () => {
   return (
     <section className={`hero-section ${darkMode ? "dark" : "light"}`}>
       {/* Background Video */}
-     <video
+     {/* <video
         className="hero-video-bg"
         autoPlay={true}
         loop={true}
@@ -31,7 +31,7 @@ export const HomeBanner = () => {
       >
         <source src="/videos/hero-banner.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
 
       <div className="hero-container">
         <div className="hero-content">

@@ -97,3 +97,9 @@
 .fade-in {
   animation: fadeIn 0.3s ease-in;
 }
+
+  @media (max-width: 768px) {
+    .preloader-text {
+      font-size: 2.25rem;
+    }
+  }

@@ -10,11 +10,21 @@ function RouterWithLoader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    // simulate route loading delay (optional)
-    const timer = setTimeout(() => setLoading(false), 6200);
-    return () => clearTimeout(timer);
-  }, [location]);
+    const isReload =
+      performance.getEntriesByType("navigation")[0]?.type === "reload";
+
+    // Show preloader ONLY when:
+    // (1) Page is "/", AND
+    // (2) It is a reload
+    if (location.pathname === "/" && isReload) {
+      setLoading(true);
+      const timer = setTimeout(() => setLoading(false), 6200);
+      return () => clearTimeout(timer);
+    } else {
+      // For all other pages — no preloader
+      setLoading(false);
+    }
+  }, [location.pathname]);
 
   if (loading) return <Preloader />;
 

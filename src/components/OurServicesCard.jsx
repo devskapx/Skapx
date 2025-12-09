@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 import "../styles/OurServicesCard.css";
 import LogoImage from "../../public/images/SKAPX-SER-LOGO.svg";
 import titleImage from "../../public/images/circle.png";
-import ServiceIcon from "../../public/images/Ser-Icon.png";
+import ServiceIcon from "../../public/images/Ser-Icon.svg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

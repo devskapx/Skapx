@@ -106,7 +106,7 @@
     font-Size: 24px;
 }
 .whywehelpbor-top-title {
-    font-size: 20px;
+    font-size: 20px !important;
 }
 .whywehelpbor-top-text{
   margin-top: 30px;

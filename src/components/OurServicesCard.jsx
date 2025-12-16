@@ -32,33 +32,36 @@ export default function OurServicesCard() {
 
   // Custom wheel handling
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+  const container = containerRef.current;
+  if (!container) return;
 
-    const handleWheel = (e) => {
-      const section = sectionRef.current;
-      if (!section) return;
+  // 🚫 Disable wheel hijack on touch devices
+  const isTouchDevice =
+    "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
-      const currentScroll = section.scrollTop;
-      const maxScroll = section.scrollHeight - section.clientHeight;
+  if (isTouchDevice) return;
 
-      if (
-        (currentScroll >= maxScroll - 5 && e.deltaY > 0) ||
-        (currentScroll <= 5 && e.deltaY < 0)
-      ) {
-        return;
-      }
+  const handleWheel = (e) => {
+    const section = sectionRef.current;
+    if (!section) return;
 
-      e.preventDefault();
-      e.stopPropagation();
-      section.scrollTop += e.deltaY;
-    };
+    const currentScroll = section.scrollTop;
+    const maxScroll = section.scrollHeight - section.clientHeight;
 
-    container.addEventListener("wheel", handleWheel, { passive: false });
-    return () => {
-      container.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
+    if (
+      (currentScroll >= maxScroll - 5 && e.deltaY > 0) ||
+      (currentScroll <= 5 && e.deltaY < 0)
+    ) {
+      return;
+    }
+
+    e.preventDefault();
+    section.scrollTop += e.deltaY;
+  };
+
+  container.addEventListener("wheel", handleWheel, { passive: false });
+  return () => container.removeEventListener("wheel", handleWheel);
+}, []);
 
   // Scroll position tracking
   useEffect(() => {

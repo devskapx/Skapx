@@ -405,9 +405,24 @@ height: 30%;
 height: 50vh;
 }
 
-.skpx-stage-3{
-
+.skpx-stage-5 {
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
+
+.skpx-stage-2,
+.skpx-stage-3,
+.skpx-stage-4,
+.skpx-stage-5 {
+  pointer-events: auto;
+}
+
+  .skpx-stage-5 {
+    position: relative; /* ❗important */
+    height: auto;
+    min-height: 100vh;
+  }
 
 }
 

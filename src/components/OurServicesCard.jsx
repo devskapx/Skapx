@@ -1,43 +1,36 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import "../styles/OurServicesCard.css";
 import LogoImage from "../../public/images/SKAPX-SER-LOGO.svg";
+import LogoImage2 from "../../public/images/SKAPX-SER-LOGO2.svg";
+import LogoImage3 from "../../public/images/hr.svg";
 import titleImage from "../../public/images/circle.png";
 import ServiceIcon from "../../public/images/Ser-Icon.svg";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 export default function OurServicesCard() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const sectionRef = useRef(null);
   const rafRef = useRef(null);
   const containerRef = useRef(null);
-
-  // ⭐ NEW — Title Animation Ref
   const titleRef = useRef(null);
 
-  // ⭐ NEW — GSAP Animation for Title
+  // Title animation effect
   useEffect(() => {
     const el = titleRef.current;
     if (!el) return;
 
-    gsap.fromTo(
-      el,
-      { opacity: 0, x: -200 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-200px)';
+    
+    const timer = setTimeout(() => {
+      el.style.transition = 'opacity 1.5s ease-out, transform 1.5s ease-out';
+      el.style.opacity = '1';
+      el.style.transform = 'translateX(0)';
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
+  // Custom wheel handling
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -67,6 +60,7 @@ export default function OurServicesCard() {
     };
   }, []);
 
+  // Scroll position tracking
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -90,7 +84,7 @@ export default function OurServicesCard() {
 
   const scrollStages = useMemo(
     () => ({
-      stage1Active: scrollPosition > 50 && scrollPosition < 800,
+      stage1Active: scrollPosition >= 0 && scrollPosition < 800,
       stage2Active: scrollPosition >= 800 && scrollPosition < 1600,
       stage3Active: scrollPosition >= 1600 && scrollPosition < 2400,
       stage4Active: scrollPosition >= 2400 && scrollPosition < 3200,
@@ -101,25 +95,25 @@ export default function OurServicesCard() {
 
   const services = useMemo(
     () => [
-      { title: "Mobile Experience Engineering", desc: "Native and cross-platform mobile apps built for performance" },
-      { title: "Next-Gen Web Solutions", desc: "Modern web applications with cutting-edge tech stacks" },
-      { title: "SaaS Product Innovation", desc: "Scalable cloud platforms engineered for growth" },
-      { title: "Experience Design (UI/UX Studio)", desc: "User-centered design that drives engagement" },
-      { title: "Intelligent Automation", desc: "AI-powered solutions to optimize business processes" },
-      { title: "API Ecosystem & Integrations", desc: "Seamless connectivity across platforms and services" },
+      { title: "Mobile Experience Engineering", desc: "Scalable and intuitive mobile apps for iOS & Android." },
+      { title: "Next-Gen Web Solutions", desc: "High-performance web platforms tailored for growth" },
+      { title: "SaaS Product Innovation", desc: "Build and scale subscription-based SaaS products with ease." },
+      { title: "Experience Design (UI/UX Studio)", desc: "Human-first designs that engage and convert." },
+      { title: "Intelligent Automation", desc: "Smarter workflows and insights powered by AI." },
+      { title: "API Ecosystem & Integrations", desc: "Connect your business with secure, seamless integrations." },
     ],
     []
   );
 
   const hiringServices = useMemo(
     () => [
-      { title: "Talent Acquisition & Workforce Strategy", desc: "Full-cycle talent sourcing and workforce planning" },
-      { title: "Executive Leadership Hiring", desc: "C-suite and senior leadership recruitment" },
-      { title: "Recruitment Process Outsourcing (RPO)", desc: "End-to-end hiring management and optimization" },
-      { title: "Employer Branding & Culture Design", desc: "Build a compelling employer brand that attracts top talent" },
-      { title: "HR Automation & Digital Systems", desc: "Streamline HR operations with modern tech solutions" },
-      { title: "Payroll & Compliance Management", desc: "Accurate payroll processing and regulatory compliance" },
-      { title: "Onboarding & Employee Experience", desc: "Create seamless onboarding journeys for new hires" },
+      { title: "Talent Acquisition & Workforce Strategy", desc: "Find the right talent aligned with your business goals." },
+      { title: "Executive Leadership Hiring", desc: "Secure leaders who can drive growth and transformation." },
+      { title: "Recruitment Process Outsourcing (RPO)", desc: "End-to-end hiring handled by our experts, saving time and costs." },
+      { title: "Employer Branding & Culture Design", desc: "Position your brand as the workplace of choice." },
+      { title: "HR Automation & Digital Systems", desc: "Streamline HR with smart, tech-enabled solutions." },
+      { title: "Payroll & Compliance Management", desc: "Hassle-free payroll and 100% compliance guaranteed." },
+      { title: "Onboarding & Employee Experience", desc: "Deliver seamless employee journeys from day one." },
     ],
     []
   );
@@ -131,29 +125,29 @@ export default function OurServicesCard() {
       <section ref={sectionRef} className="skpx-services-section">
         <div className="skpx-services-content">
 
-          {/* 🔥 TOP HEADING ADDED HERE */}
+          {/* TOP HEADING */}
           <div className="whychoose-top" ref={titleRef}>
-          <img src={titleImage} alt="Title Icon" className="whychoose-top-icon" />
-          <h2 className="whychoose-top-title skpx-main-heading">
-            Our{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #FAA706 0%, #FF6700 82%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                display: "inline-block",
-              }}
-            >
-              Services
-            </span>
-          </h2>
+            <img src={titleImage} alt="Title Icon" className="whychoose-top-icon" />
+            <h2 className="whychoose-top-title skpx-main-heading">
+              Our{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #FAA706 0%, #FF6700 82%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  display: "inline-block",
+                }}
+              >
+                Services
+              </span>
+            </h2>
           </div>
+           <div className="skpx-main-subtitle">
+           <p>Where smart technology meets smarter teams — we help businesses turn bold ideas 
+            <br/> into scalable solutions and sustained growth through innovation and talent.</p>
+            </div>
 
-          <p className="skpx-main-subtitle">
-          Where smart technology meets smarter teams — we help businesses turn bold ideas into scalable solutions and sustained growth through innovation and talent.
-          </p>
-
-          {/* Stage 1 */}
+          {/* Stage 1 - Three Cards */}
           <div
             className={`skpx-stage-1 ${stage2Active || stage3Active || stage4Active || stage5Active ? "hidden" : ""}`}
           >
@@ -170,10 +164,10 @@ export default function OurServicesCard() {
             </div>
           </div>
 
-          {/* Stage 2 */}
+          {/* Stage 2 - Tech Solutions */}
           <div className={`skpx-stage-2 ${stage2Active ? "active" : ""}`}>
             <div className="skpx-info-card">
-              <div className="skpx-icon-box">
+              <div className="skpx-icon-box-1">
                 <img src={LogoImage} alt="Logo" className="skpx-logo-img" />
               </div>
               <div className="skpx-info-content">
@@ -182,17 +176,17 @@ export default function OurServicesCard() {
                   <span className="skpx-title-orange">Solutions</span>
                 </h1>
                 <p className="skpx-description">
-                  From mobile apps to SaaS platforms, SkapeX helps businesses transform ideas into scalable digital solutions.
+                  From mobile apps to SaaS platforms, SkapX helps businesses transform ideas into scalable digital solutions. Our focus is on building technology that is future-ready, user-friendly, and business-driven.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Stage 3 – Services List (WITH ICONS) */}
+          {/* Stage 3 – Services List */}
           <div className={`skpx-stage-3 ${stage3Active ? "active" : ""}`}>
             <div className="skpx-services-card">
               <div className="skpx-icon-box-2">
-                <img src={LogoImage} alt="Logo" className="skpx-logo-img" />
+                <img src={LogoImage2} alt="Logo" className="skpx-logo-img" />
               </div>
 
               <div className="skpx-services-list">
@@ -209,11 +203,11 @@ export default function OurServicesCard() {
             </div>
           </div>
 
-          {/* Stage 4 */}
+          {/* Stage 4 - Hiring Solutions */}
           <div className={`skpx-stage-4 ${stage4Active ? "active" : ""}`}>
             <div className="skpx-info-card">
               <div className="skpx-icon-box">
-                <img src={LogoImage} alt="Logo" className="skpx-logo-img" />
+                <img src={LogoImage3} alt="Logo" className="skpx-logo-img" />
               </div>
               <div className="skpx-info-content">
                 <h1 className="skpx-title">
@@ -221,17 +215,17 @@ export default function OurServicesCard() {
                   <span className="skpx-title-orange">Solutions</span>
                 </h1>
                 <p className="skpx-description">
-                  At SkapX, we go beyond recruitment — we help you find the right people who drive growth.
+              At SkapX, we go beyond recruitment — we help you find the right people who drive growth. Whether you need a lean startup team, executive leadership, or end-to-end HR support, our solutions are designed to scale with your business.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Stage 5 – Hiring List (WITH ICONS) */}
+          {/* Stage 5 – Hiring List */}
           <div className={`skpx-stage-5 ${stage5Active ? "active" : ""}`}>
             <div className="skpx-services-card">
               <div className="skpx-icon-box">
-                <img src={LogoImage} alt="Logo" className="skpx-logo-img" />
+                <img src={LogoImage3} alt="Logo" className="skpx-logo-img" />
               </div>
 
               <div className="skpx-services-list">

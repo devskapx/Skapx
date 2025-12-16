@@ -30,6 +30,13 @@
   min-height: 600vh;
   position: relative;
   width: 100%;
+  background-image: url("/images/ourservicesc.png");
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 80px;
 }
 
 /* Stage 1 - Three Cards - Fixed within container */
@@ -169,9 +176,26 @@
   gap: 3rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
+.skpx-service-desc{
+  color: #ffffff77;
+  padding-top: 10px;
+}
 
 /* Icon Box */
 .skpx-icon-box {
+  /* background: linear-gradient(to bottom right, #9333ea, #ec4899, #f97316); */
+   background: #40414e9e;
+  border-radius: 1rem;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 35%;
+  min-height: 100%;
+}
+
+.skpx-icon-box-1 {
   background: linear-gradient(to bottom right, #9333ea, #ec4899, #f97316);
   border-radius: 1rem;
   padding: 6rem;
@@ -186,7 +210,7 @@
 .skpx-icon-box-2 {
   background: #40414e9e;
   border-radius: 1rem;
-  padding: 4rem;
+  padding: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,23 +238,32 @@
 }
 
 .skpx-title-purple {
-  color: #a855f7;
+  color: #670BFF;
 }
 
 .skpx-title-orange {
-  color: #fb923c;
+  color: #FF6700;
 }
 
 .skpx-description {
   color: #d1d5db;
+  font-size: 1.80rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.skpx-main-subtitle{
+    color: #d1d5db;
   font-size: 1.125rem;
   line-height: 1.7;
-  margin: 0;
+  justify-items: center;
+  text-align: center;
 }
 
 /* Services List */
 .skpx-services-list {
   flex: 1;
+  align-self: center;
 }
 
 .skpx-service-item {
@@ -240,201 +273,7 @@
   margin-bottom: 1.25rem;
 }
 
-.skpx-service-icon{
+.skpx-service-icon {
   width: 40px;
   height: 40px;
-}
-
-.skpx-service-item:last-child {
-  margin-bottom: 0;
-}
-
-.skpx-bullet {
-  width: 8px;
-  height: 8px;
-  background-color: #a855f7;
-  border-radius: 50%;
-  margin-top: 6px;
-  flex-shrink: 0;
-}
-
-.skpx-service-text {
-  flex: 1;
-}
-
-.skpx-service-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 0 0 0.25rem 0;
-  line-height: 1.4;
-  color: white;
-}
-
-.skpx-service-desc {
-  color: #9ca3af;
-  font-size: 0.875rem;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .skpx-info-card,
-  .skpx-services-card {
-    flex-direction: column;
-    padding: 2rem;
-  }
-
-  .skpx-title {
-    font-size: 2rem;
-  }
-
-  .skpx-icon-box,
-  .skpx-icon-hiring {
-    min-width: 120px;
-    min-height: 120px;
-    width: 120px;
-    height: 120px;
-    place-self: center;
-  }
-
-  .skpx-card-left.active,
-  .skpx-card-right.active {
-    width: 30%;
-  }
-
-  .skpx-card-center.active {
-    width: 40%;
-  }
-}
-
-
-
-
-
-/* MAIN HEADING */
-.skpx-main-heading {
-  text-align: center;
-  font-size: 46px;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
-/* SUBTITLE (2 LINES) */
-.skpx-main-subtitle {
-  text-align: center;
-  font-size: 18px;
-  line-height: 28px;
-  color: #dcdcdc;
-  margin-bottom: 50px;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
-
-/* ===========================================================
-   📲 TABLET (768PX – 1024PX)
-   =========================================================== */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-
-}
-
-
-
-/* ===========================================================
-   📱 MOBILE (MAX-WIDTH: 768PX)
-   =========================================================== */
-@media (max-width: 768px) {
- .skpx-main-subtitle {
-    text-align: center;
-    font-size: 15px;
-    line-height: 23px;
-    color: #dcdcdc;
-    margin-bottom: 50px;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.skpx-stage-1 {
-  display: block;
-}
- .skpx-card-left.active, .skpx-card-right.active, .skpx-card-center.active {
-        width: 100%;
-    }
-    .skpx-card-left.active {
-    opacity: 1;
-    transform: rotate(0deg) translateY(-10px);
-    margin-bottom: 20px;
-}
-
-    .skpx-card-center.active {
-    opacity: 1;
-    transform: rotate(0deg) translateY(-10px);
-    margin-bottom: 20px;
-  }
-
-    .skpx-card-right.active {
-    opacity: 1;
-    transform: rotate(0deg) translateY(-10px);
-}
-.skpx-info-card{
-  margin: 0 1rem;
-  padding: 0rem;
-  gap: 1rem;
-}
-.skpx-description {
-  font-size: 15px;
-  text-align: center;
-}
-.skpx-stage-3{
-    display: block;
-}
-.skpx-services-card {
-  padding: 0rem;
-  gap: 1rem;
-}
-.skpx-title {
-  text-align: center;
-}
-}
-
-
-/* ========================================== */
-/* 🌙 DARK MODE (Default Look)                */
-/* ========================================== */
-body.dark .skpx-services-content {
-  background-color: #0a0a0a !important;
-  color: #fff !important;
-  padding-top: 50px;
-}
-
-/* ========================================== */
-/* ☀️ LIGHT MODE (White Gradient Background)  */
-/* ========================================== */
-body.light .skpx-services-content {
-  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
-  color: #000 !important;
-}
-
-body.light .skpx-service-title {
-  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
-  color: #000 !important;
-}
-
-
-.skpx-services-content {
-  min-height: 600vh;
-  width: 100%;
-  position: relative;
-
-  background-image: url("/images/ourservicesc.png");  /* ✔ Correct path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }

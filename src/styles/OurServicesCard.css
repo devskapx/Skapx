@@ -277,3 +277,194 @@
   width: 40px;
   height: 40px;
 }
+
+@media (max-width: 767px) {
+
+  /* Container */
+  .skpx-services-container,
+  .skpx-services-section {
+    height: 100vh;
+  }
+
+  .skpx-services-content {
+    min-height: 600vh;
+    padding-top: 60px;
+    background-attachment: scroll; /* fixed causes issues on mobile */
+  }
+
+  /* Heading */
+  .skpx-main-heading {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .skpx-main-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* ---------- STAGE 1 ---------- */
+  .skpx-stage-1 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .skpx-card {
+    width: 90% !important;
+    height: 28vh !important;
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .skpx-card-center {
+    height: 32vh !important;
+  }
+
+  /* ---------- STAGE 2 & 4 ---------- */
+  .skpx-info-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    max-width: 95%;
+    gap: 1.5rem;
+  }
+
+  .skpx-icon-box,
+  .skpx-icon-box-1 {
+    padding: 2.5rem;
+    min-width: 100%;
+  }
+
+  .skpx-title {
+    font-size: 2rem;
+  }
+
+  .skpx-description {
+    font-size: 1.05rem;
+  }
+
+  /* ---------- STAGE 3 & 5 ---------- */
+  .skpx-services-card {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .skpx-icon-box-2 {
+    min-width: 100%;
+    padding: 2rem;
+  }
+
+  .skpx-service-item {
+    align-items: flex-start;
+  }
+
+  .skpx-service-title {
+    font-size: 1.1rem;
+  }
+
+  .skpx-service-desc {
+    font-size: 0.95rem;
+  }
+
+
+  /* Icon Box */
+.skpx-icon-box {
+  padding: 1rem;
+}
+
+.skpx-icon-box img{
+  width: 40%;
+height: 30%;
+}
+
+.skpx-icon-box-1 {
+  padding: 6rem;
+}
+
+.skpx-icon-box-2 {
+  padding: 0rem;
+}
+
+.skpx-icon-box-2 img{
+width: 60%;
+height: 30%;
+}
+
+.skpx-service-title{
+  font-size: 15px;
+}
+
+.skpx-service-desc{
+  font-size: 11px;
+}
+
+.skpx-stage-2{
+height: 50vh;
+}
+
+.skpx-stage-3{
+
+}
+
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .skpx-services-content {
+    min-height: 550vh;
+    background-attachment: scroll;
+  }
+
+  /* Stage 1 cards */
+  .skpx-card-left.active,
+  .skpx-card-right.active {
+    width: 30%;
+  }
+
+  .skpx-card-center.active {
+    width: 40%;
+  }
+
+  /* Info cards */
+  .skpx-info-card {
+    flex-direction: column;
+    text-align: center;
+    max-width: 85%;
+    padding: 2.5rem;
+  }
+
+  .skpx-icon-box,
+  .skpx-icon-box-1 {
+    min-width: 100%;
+    padding: 4rem;
+  }
+
+  /* Services list */
+  .skpx-services-card {
+    flex-direction: column;
+    max-width: 90%;
+    padding: 2.5rem;
+  }
+
+  .skpx-title {
+    font-size: 2.4rem;
+  }
+
+  .skpx-description {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .skpx-services-section {
+    overscroll-behavior: contain;
+  }
+}

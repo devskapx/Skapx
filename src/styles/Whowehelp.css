@@ -248,7 +248,7 @@ body.light .whychoose-top-title,
 body.light .whowehelp-title-btm,
 body.light .whywehelpbor-top-title,
 body.light p {
-  color: #000 !important;
+  color: #000;
 }
 
 /* Ensure the animated conic border still looks visible */

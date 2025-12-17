@@ -369,7 +369,6 @@
     font-size: 0.95rem;
   }
 
-
   /* Icon Box */
 .skpx-icon-box {
   padding: 1rem;
@@ -425,9 +424,6 @@ height: 50vh;
 
 }
 
-
-
-
 @media (min-width: 768px) and (max-width: 1024px) {
 
   .skpx-services-content {
@@ -475,10 +471,33 @@ height: 50vh;
   }
 }
 
-
-
 @media (max-width: 1024px) {
   .skpx-services-section {
     overscroll-behavior: contain;
   }
+}
+
+/* ========================================== */
+/* 🌙 DARK MODE (Default Look)                */
+/* ========================================== */
+body.dark .skpx-services-content {
+  background: #0a0a0a !important;
+  color: #fff !important;
+}
+
+/* ========================================== */
+/* ☀️ LIGHT MODE (White Gradient Background)  */
+/* ========================================== */
+body.light .skpx-services-content {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #000 !important;
+}
+
+/* Keep testimonial cards the same in both modes */
+body.light .skpx-service-title{
+  color: #000;
+}
+
+body.dark .skpx-service-title {
+  color: #ffffff;
 }

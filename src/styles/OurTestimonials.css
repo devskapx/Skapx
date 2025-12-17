@@ -34,7 +34,6 @@
 }
 
 .testimonial-card {
-  background: linear-gradient(145deg, #171738, #0f0f26);
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   padding: 20px;
@@ -45,7 +44,6 @@
 
 .testimonial-text {
   font-size: 0.95rem;
-  color: #333;
   margin-bottom: 15px;
   line-height: 1.5;
 }
@@ -98,7 +96,6 @@
 }
 
 .testimonial-card {
-  background: linear-gradient(145deg, #171738, #0f0f26);
   border-radius: 20px;
   padding: 30px;
   width: 320px;
@@ -115,7 +112,6 @@
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 25px;
-  color: #eaeaea;
 }
 
 .testimonial-footer {
@@ -160,26 +156,36 @@ body.light .testimonials-section {
   color: #000 !important;
 }
 
-/* Keep testimonial cards the same in both modes */
-body.light .testimonial-card,
-body.dark .testimonial-card {
-  background: linear-gradient(145deg, #171738, #0f0f26) !important;
-  color: inherit !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-}
-
 /* Text colors inside cards */
 body.light .testimonial-text {
-  color: #ffffff !important;
+  color: #000000;
+}
+
+body.Dark .testimonial-text {
+  color: #000000 !important;
 }
 
 body.light .testimonial-info h4 {
-  color: #ffffff !important;
+  color: #3b3b3b !important;
 }
 
 body.light .testimonial-info p {
   color: #828181 !important;
 }
+
+
+
+body.dark .testimonial-card{
+background: linear-gradient(145deg, #171738, #0f0f26);
+}
+
+body.light .testimonial-card{
+  color: #690bff47;
+}
+
+
+
+
 
 /* Adjust subheading and title for visibility */
 body.light .whychoose-top-title,

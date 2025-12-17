@@ -1,0 +1,127 @@
+.contact-wrapper {
+  min-height: 100vh;
+  padding: 40px;
+  background: #000;
+}
+
+.contact-container-cont {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.contact-form-card {
+  background: #17181C;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-subtitle {
+  color: #670BFF;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.contact-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid #ffffffb6;
+  background: transparent;
+  font-size: 13px;
+  margin-bottom: 16px;
+  outline: none;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #8b5cf6;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #670BFF;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.4);
+}
+
+/* Right Side */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: #17181C;
+  padding: 28px;
+  border-radius: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #7c3aed;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 6px;
+}
+
+.info-text {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.social-icon {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-container-cont {
+    grid-template-columns: 1fr;
+  }
+}

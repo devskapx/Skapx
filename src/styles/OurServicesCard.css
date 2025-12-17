@@ -419,7 +419,6 @@ height: 50vh;
 }
 
   .skpx-stage-5 {
-    position: relative; /* ❗important */
     height: auto;
     min-height: 100vh;
   }

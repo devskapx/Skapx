@@ -21,7 +21,7 @@
 
 .contact-subtitle {
   color: #670BFF;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 8px;
@@ -124,4 +124,29 @@
   .contact-container-cont {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* ========================================== */
+/* 🌙 DARK MODE (Default Look)                */
+/* ========================================== */
+body.dark .contact-wrapper {
+  background-color: #0d0d0d !important;
+  color: #ffffff !important;
+}
+
+/* ========================================== */
+/* ☀️ LIGHT MODE (White Gradient Background)  */
+/* ========================================== */
+body.light .contact-wrapper {
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
+  color: #000000 !important;
+}
+
+body.light .contact-form-card {
+  background: #670bff2e;
+}
+
+body.light .info-card{
+   background: #670bff2e; 
 }

@@ -1,9 +1,23 @@
+/* Animation Keyframes */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main Wrapper */
 .contact-wrapper {
   min-height: 100vh;
   padding: 40px;
   background: #000;
 }
 
+/* Container */
 .contact-container-cont {
   max-width: 1300px;
   margin: auto;
@@ -12,15 +26,22 @@
   gap: 32px;
 }
 
+/* Left Form Card */
 .contact-form-card {
-  background: #17181C;
+  background: #17181c;
   border-radius: 24px;
   padding: 32px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.contact-form-card.visible {
+  animation: slideUp 0.8s ease-out forwards;
 }
 
 .contact-subtitle {
-  color: #670BFF;
+  color: #670bff;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -31,8 +52,35 @@
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 32px;
+  color: #fff;
 }
 
+/* Input Wrapper - Material UI Style */
+.input-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-label {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  color: #999;
+  font-size: 13px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: #17181c;
+  padding: 0 4px;
+}
+
+.input-label.active {
+  top: -10px;
+  font-size: 11px;
+  color: #670bff;
+  font-weight: 600;
+}
+
+/* Form Inputs */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -41,24 +89,25 @@
   border: 1px solid #ffffffb6;
   background: transparent;
   font-size: 13px;
-  margin-bottom: 16px;
   outline: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   color: #fff;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #8b5cf6;
+  border-color: #670bff;
+  box-shadow: 0 0 0 2px rgba(103, 11, 255, 0.1);
 }
 
+/* Submit Button */
 .submit-btn {
   width: 100%;
   padding: 18px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  background: #670BFF;
+  background: #670bff;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -67,30 +116,107 @@
   justify-content: center;
   gap: 10px;
   transition: 0.3s;
+  margin-top: 8px;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   transform: scale(1.05);
   box-shadow: 0 15px 40px rgba(124, 58, 237, 0.4);
 }
 
-/* Right Side */
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Status Messages */
+.status-message {
+  margin-top: 16px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.status-success {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid #22c55e;
+}
+
+.status-error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+/* Right Info Section */
 .contact-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  opacity: 0;
+  transform: translateY(60px);
 }
 
+.contact-info.visible {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Info Cards */
 .info-card {
-  background: #17181C;
+  background: #17181c;
   padding: 28px;
   border-radius: 24px;
   display: flex;
   gap: 20px;
   align-items: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.combined-card {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Contact Item */
+.contact-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-item:first-child {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #2a2b2f;
+}
+
+.contact-item:last-child {
+  padding-top: 20px;
+}
+
+/* Contact Links */
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  transform: translateX(5px);
+}
+
+.contact-link:hover .icon-box {
+  background: #670bff;
+  transform: scale(1.1);
+}
+
+/* Icon Box */
 .icon-box {
   width: 70px;
   height: 70px;
@@ -100,8 +226,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
+/* Info Labels & Text */
 .info-label {
   font-size: 12px;
   font-weight: 600;
@@ -112,32 +241,23 @@
 .info-text {
   font-size: 26px;
   font-weight: 700;
+  color: #fff;
 }
 
-.social-icon {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 1024px) {
   .contact-container-cont {
     grid-template-columns: 1fr;
   }
 }
 
-
-/* ========================================== */
-/* 🌙 DARK MODE (Default Look)                */
-/* ========================================== */
+/* Dark Mode (Default) */
 body.dark .contact-wrapper {
   background-color: #0d0d0d !important;
   color: #ffffff !important;
 }
 
-/* ========================================== */
-/* ☀️ LIGHT MODE (White Gradient Background)  */
-/* ========================================== */
+/* Light Mode */
 body.light .contact-wrapper {
   background: linear-gradient(to bottom right, #ffffff, #f7f7f7) !important;
   color: #000000 !important;
@@ -147,6 +267,24 @@ body.light .contact-form-card {
   background: #670bff2e;
 }
 
-body.light .info-card{
-   background: #670bff2e; 
+body.light .info-card {
+  background: #670bff2e;
+}
+
+body.light .input-label {
+  background: transparent;
+  color: #000;
+}
+
+body.light .contact-form input,
+body.light .contact-form textarea {
+  color: #000;
+}
+
+body.light .contact-title {
+  color: #000;
+}
+
+body.light .info-text {
+  color: #000;
 }

@@ -259,13 +259,13 @@ export default function Contactusform() {
               </div>
               <div>
                 <p className="info-label">GIVE US A CALL</p>
-                <p className="info-text">91+ 98765-41234</p>
+                <p className="info-text">91+ 98765 41234</p>
               </div>
             </a>
           </div>
 
           <a 
-            href="https://www.linkedin.com/" 
+            href="https://www.linkedin.com/company/skapx/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="info-card contact-link"

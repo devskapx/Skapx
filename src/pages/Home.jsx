@@ -1,4 +1,4 @@
-import Blog from "../components/Blog";
+// import Blog from "../components/Blog";
 import Counting from "../components/Counting";
 import Footer from "../components/Footer";
 import { HomeBanner } from "../components/HomeBanner";
@@ -22,7 +22,7 @@ function Home() {
       <OurClients/>
       <Whowehelp/>
       <OurTestimonials/>
-      <Blog/>
+      {/* <Blog/> */}
       <Footer/>
     </div>
   );

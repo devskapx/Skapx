@@ -2,7 +2,7 @@
 /* BASE STYLES           */
 /* ===================== */
 
-.hero-section {
+.ser-hero-section {
   box-sizing: border-box;
   width: 100%;
   min-height: 75vh;
@@ -179,7 +179,7 @@
 }
 
 /* Overlay for readability */
-.hero-section::after {
+.ser-hero-section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -195,34 +195,34 @@
 /* DARK & LIGHT MODE     */
 /* ===================== */
 
-.hero-section.dark {
+.ser-hero-section.dark {
   background: linear-gradient(211deg, #280069 0%, #000000 52%);
   color: #fff;
 }
 
-.hero-section.light {
+.ser-hero-section.light {
   background: linear-gradient(to bottom right, #e9d5ff, #d8b4fe, #e9d5ff);
   color: #000;
 }
 
-.hero-section.light .hero-heading {
+.ser-hero-section.light .hero-heading {
   color: #000;
 }
 
-.hero-section.light .hero-description {
+.ser-hero-section.light .hero-description {
   color: #222;
 }
 
-.hero-section.light{
+.ser-hero-section.light{
   color: #670bff;
 }
 
-.hero-section.light .badge {
+.ser-hero-section.light .badge {
   background: #670bff;
   color: #fff;
 }
 
-.hero-section.light::after {
+.ser-hero-section.light::after {
   background: linear-gradient(
     to bottom right,
     rgba(233, 213, 255, 0.8),
@@ -296,14 +296,14 @@
     padding: 8px 18px;
   }
 
-  .hero-section {
+  .ser-hero-section {
     min-height: 700px;
   }
 }
 
 /* Dark mode media query */
 @media (prefers-color-scheme: dark) {
-  .hero-section {
+  .ser-hero-section {
     background: #0a0a0a;
     color: #ffffff;
   }
@@ -326,7 +326,7 @@
   }
 }
 @media (max-width: 480px) {
-.hero-section {
+.ser-hero-section {
     min-height: 400px;
 }
 .hero-description {

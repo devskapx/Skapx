@@ -68,11 +68,6 @@ body.dark .navbar.scrolled {
   font-weight: 500;
 }
 
-/* OLD THEME SWITCH */
-.theme-switch {
-  margin-right: 60px;
-}
-
 .checkbox {
   display: none;
 }
@@ -228,8 +223,10 @@ body.dark .ball {
 
 /* Navbar base */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   padding: 16px 30px;
   display: flex;

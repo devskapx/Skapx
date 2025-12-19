@@ -1,27 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import bgImage from "../../public/images/Property1V.svg";
 import "../styles/Blog.css";
 
 const Blog = () => {
-  const [theme, setTheme] = useState("dark");
   const titleRef = useRef(null);
   const navigate = useNavigate();
-
-  // 🔹 slug generator
-  const generateSlug = (text) => {
-    return text
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-  };
-
-  // 🔹 read more handler
-  const handleReadMore = (title) => {
-    const slug = generateSlug(title);
-    navigate(`/blog/${slug}`);
-  };
 
   return (
     <div
@@ -33,6 +18,7 @@ const Blog = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* ===== Title ===== */}
       <div className="whychoose-top" ref={titleRef}>
         <img
           src="/images/circle.png"
@@ -76,11 +62,11 @@ const Blog = () => {
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
+
             <button
+              type="button"
               className="blog-btn"
-              onClick={() =>
-                handleReadMore("Lorem Ipsum is simply dummy text")
-              }
+              onClick={() => navigate("/blog/lorem-ipsum")}
             >
               Read more <ArrowRight size={18} />
             </button>
@@ -109,9 +95,11 @@ const Blog = () => {
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </p>
+
               <button
+                type="button"
                 className="blog-btn-small"
-                onClick={() => handleReadMore("Digital Marketing")}
+                onClick={() => navigate("/blog/digital-marketing")}
               >
                 Read more <ArrowRight size={16} />
               </button>
@@ -140,11 +128,11 @@ const Blog = () => {
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </p>
+
               <button
+                type="button"
                 className="blog-btn-small"
-                onClick={() =>
-                  handleReadMore("Lorem Ipsum is simply")
-                }
+                onClick={() => navigate("/blog/lorem-ipsum")}
               >
                 Read more <ArrowRight size={16} />
               </button>

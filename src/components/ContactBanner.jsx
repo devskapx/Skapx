@@ -20,7 +20,7 @@ export const ContactBanner = () => {
   }, []);
 
   return (
-    <section className={`hero-section ${darkMode ? "dark" : "light"}`}>
+    <section className={`conta-hero-section ${darkMode ? "dark" : "light"}`}>
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-inner">

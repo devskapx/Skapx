@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import LoremIpsum from "./pages/blogs/LoremIpsum";
+import DigitalMarketing from "./pages/blogs/DigitalMarketing";
 import Preloader from "./components/Preloader";
 
 // Route-based loader logic
@@ -34,6 +36,8 @@ function RouterWithLoader() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/blog/lorem-ipsum" element={<LoremIpsum />} />
+      <Route path="/blog/digital-marketing" element={<DigitalMarketing />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>

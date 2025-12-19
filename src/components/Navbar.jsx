@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../styles/Navbar.css";
-import logo from "../../public/images/logo.svg";
+import logo from "../../public/images/logo-x.svg";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);

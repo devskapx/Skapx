@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import "../styles/Footer.css";
 import contactImage from "../../public/images/unnamed.svg";
-import logo from "../../public/images/logo.svg";
+import logo from "../../public/images/logo-x.svg";
 import {
   Facebook,
   Instagram,

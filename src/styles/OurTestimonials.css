@@ -133,6 +133,11 @@
   margin: 0;
 }
 
+ @media (max-width: 768px) {
+
+.testimonial-subheading {
+  font-size: 1.6rem;}
+}
 
 
 

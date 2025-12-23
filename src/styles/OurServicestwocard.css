@@ -167,7 +167,7 @@ body.light .service-title {
 
  @media (max-width: 768px) {
   .services-container {
-  padding: 2rem;
+  padding: 1rem;
 }
 .service-card {
   padding: 1rem;
@@ -176,5 +176,8 @@ body.light .service-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
+}
+.cta-button{
+  font-size: 1rem;
 }
  }

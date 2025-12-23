@@ -35,6 +35,10 @@
   .text {
     font-size: 16px;
   }
+
+  .about-con-card {
+    width: 100%;
+}
 }
 
 
